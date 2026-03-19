@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chủ Nghĩa Nội Tâm Nhất Quán - Trương Khá</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -12,8 +13,10 @@
             --text-color: #1d1d1f;
             --accent-color: #bfa15a; 
             --gold-dark: #aa8844;
-            --bg-overlay: rgba(255, 255, 255, 0.95);
+            --bg-overlay: rgba(255, 255, 255, 0.96);
         }
+
+        * { box-sizing: border-box; }
 
         body {
             margin: 0; padding: 0;
@@ -26,49 +29,173 @@
             overflow-x: hidden;
         }
 
-        .main-wrapper { background: var(--bg-overlay); min-height: 100vh; padding: 60px 20px; }
-        .container { max-width: 850px; margin: 0 auto; }
+        .main-wrapper {
+            background: var(--bg-overlay);
+            min-height: 100vh;
+            padding: 80px 20px;
+        }
 
-        header { text-align: center; margin-bottom: 120px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold-dark); font-style: italic; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
-        
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent-color); margin-top: 100px; border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 10px; }
-        h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold-dark); border-left: 4px solid var(--accent-color); padding-left: 20px; margin-top: 60px; }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
 
-        p { text-align: justify; font-size: 1.15rem; margin-bottom: 25px; color: #2c2c2c; }
-        strong { font-weight: 600; color: #000; }
-        u { text-underline-offset: 6px; text-decoration-color: var(--accent-color); }
+        header {
+            text-align: center;
+            margin-bottom: 120px;
+        }
 
-        .feature-img { width: 100%; height: 500px; object-fit: cover; margin: 50px 0; box-shadow: 0 20px 50px rgba(0,0,0,0.15); filter: grayscale(100%); transition: 1.2s ease; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 3.8rem);
+            color: var(--gold-dark);
+            margin-bottom: 10px;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-top: 100px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold-dark);
+            margin-top: 60px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            text-align: justify;
+            font-size: 1.15rem;
+            color: #2c2c2c;
+        }
+
+        blockquote {
+            margin: 80px 0;
+            padding: 50px;
+            background: #fff;
+            border-radius: 4px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            text-align: center;
+            color: #444;
+            border: 1px inset var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin: 50px 0;
+            border-radius: 2px;
+            filter: grayscale(100%);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transition: 1.2s ease;
+        }
+
         .feature-img:hover { filter: grayscale(0%); }
 
-        blockquote { margin: 80px 0; padding: 50px; background: #fff; border-radius: 4px; font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; text-align: center; color: #444; border: 1px inset var(--accent-color); }
+        .transition-bridge {
+            font-style: italic;
+            color: var(--gold-dark);
+            text-align: center;
+            margin: 80px 0;
+            font-weight: 300;
+            font-size: 1.25rem;
+            position: relative;
+        }
 
-        .transition-bridge { font-style: italic; color: var(--gold-dark); text-align: center; margin: 60px 0; font-weight: 300; font-size: 1.2rem; position: relative; }
-        .transition-bridge::before, .transition-bridge::after { content: "—"; margin: 0 15px; }
+        .transition-bridge::before, .transition-bridge::after {
+            content: "—";
+            margin: 0 20px;
+        }
 
-        #music-btn { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: var(--gold-dark); color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; box-shadow: 0 5px 20px rgba(0,0,0,0.3); font-size: 1.3rem; }
+        #music-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--gold-dark);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            font-size: 1.3rem;
+            transition: transform 0.3s;
+        }
 
-        footer { text-align: center; margin-top: 150px; padding: 80px 0; border-top: 1px solid #ddd; font-family: 'Playfair Display', serif; font-size: 2.2rem; font-style: italic; color: var(--gold-dark); }
+        #music-btn:hover { transform: scale(1.1); }
+
+        .rating-box {
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            padding: 50px;
+            background: rgba(191, 161, 90, 0.05);
+            margin-top: 100px;
+        }
+
+        .star {
+            font-size: 2.5rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 150px;
+            padding: 80px 0;
+            border-top: 1px solid #ddd;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--gold-dark);
+        }
+
+        @media (max-width: 768px) {
+            .feature-img { height: 300px; }
+            blockquote { padding: 30px; font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
 
-<audio id="bg-audio" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg"></audio>
-<button id="music-btn">♫</button>
+<audio id="bg-audio" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+<button id="music-btn" title="Bật/Tắt nhạc">♫</button>
 
 <div class="main-wrapper">
     <div class="container">
+        
         <header data-aos="fade-down">
+            <div style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; color: #888; margin-bottom: 10px;">Bản tuyên ngôn tự do</div>
             <h1>Chủ Nghĩa Nội Tâm Nhất Quán</h1>
-            <p style="letter-spacing: 3px; color: #888;">TRƯƠNG KHÁ</p>
+            <p style="text-align: center; font-style: italic; color: #777;">Tác giả: Trương Khá</p>
         </header>
 
         <section data-aos="fade-up">
             <h2>CHƯƠNG 1: SỰ THỨC TỈNH – TỪ HUYỀN THOẠI ĐẾN LÝ TRÍ</h2>
-            <img src="https://images.unsplash.com/photo-1518171032333-e9d6d39d9f9c?q=80&w=2000" class="feature-img">
+            <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?auto=format&fit=crop&q=80&w=2000" class="feature-img">
             
-            <h3>1.1. Tiếng gọi từ thung lũng: Bản năng hay Mệnh lệnh?</h3>
+              <h3>1.1. Tiếng gọi từ thung lũng: Bản năng hay Mệnh lệnh?</h3>
             <p>Hãy tưởng tượng bạn đang đứng trước một dòng sông dữ. Ở bờ bên kia, một sinh linh đang chới với. Trong khoảnh khắc ấy, một luồng điện chạy dọc sống lưng, thúc giục bạn lao mình xuống nước. Đó là một lực đẩy vô hình, mạnh mẽ và thuần khiết. Lúc ấy, tâm trí bạn có kịp lật lại những trang kinh điển? Bạn có kịp tính toán xem hành động này sẽ đổi lại bao nhiêu "điểm công đức" hay tránh được bao nhiêu "hình phạt" ở một thế giới bên kia?</p>
             <p>Chắc chắn là Không. Bạn hành động vì một thứ ánh sáng nội tại mà các nhà khoa học gọi là Sự Thấu Cảm (Empathy). Thông qua những "tế bào thần kinh gương", não bộ chúng ta không chỉ quan sát, mà nó thực sự "sống" trong nỗi đau của đồng loại. Đây là sợi dây liên kết sinh học bền chặt nhất, giúp loài người vượt qua kỷ băng hà và những cuộc sinh tồn khốc liệt.</p>
             <p>Sự thức tỉnh đầu tiên: <strong>Lòng tốt không phải là món quà được ban phát từ một ngai vàng xa xôi. Nó là viên ngọc quý nằm sẵn trong đáy tim mỗi người.</strong> Khi những "người chăn dắt" nói rằng con người vốn dĩ ác độc và cần những rào dậu mệnh lệnh để không sa ngã, họ thực chất đang dựng lên một bức tường ngăn cách bạn với chính bản chất tốt đẹp tự nhiên của loài người, nhằm biến họ thành "người giữ chìa khóa" cho lương tâm của bạn.</p>
@@ -88,12 +215,12 @@
             <p><strong>A. Quyền lực của sự "Giải thoát hộ":</strong> Việc thiết lập các nghi lễ giải tội thực chất là cơ chế thiết lập sự lệ thuộc. Khi bạn tin rằng chỉ có một lớp người cụ thể mới có quyền tha thứ, bạn đã trao cho họ chiếc chìa khóa lương tâm mình. Đằng sau những lời khuyên bảo đạo đức thường là sự củng cố địa vị của tổ chức và điều hướng nguồn lực của bạn để nuôi dưỡng bộ máy trung gian.</p>
             <p><strong>B. Sự thức tỉnh của "Vị Vua Nội Tâm":</strong> Chủ nghĩa Nội tâm Nhất quán khẳng định: Không có bất kỳ khoảng cách nào giữa bạn và Chân lý. Vũ trụ không cần người phiên dịch. Khi bạn dám tự nhìn vào gương, thừa nhận lỗi lầm và tự hứa sửa đổi mà không cần qua nghi lễ, đó là lúc bạn trưởng thành. <u>Bạn chính là vị vua, vị quan tòa và người thực thi công lý trong vương quốc nội tâm của chính mình.</u></p>
             
-            <div class="transition-bridge">Khi màn sương huyền thoại đã tan biến, ta không còn cần một người chăn dắt. Ta cần một bản đồ mới để định vị bản thân giữa thực tại vô cùng.</div>
+            <div class="transition-bridge">Khi màn sương huyền thoại tan biến, ta cần một bản đồ mới để định vị bản thân giữa thực tại vô cùng.</div>
         </section>
 
         <section data-aos="fade-up">
             <h2>CHƯƠNG 2: THẾ GIỚI QUAN NHẤT QUÁN – ĐIỂM TỰA GIỮA DÒNG XOÁY</h2>
-            <img src="https://images.unsplash.com/photo-1541432938128-d78ed703d154?q=80&w=2000" class="feature-img">
+             <img src="https://images.unsplash.com/photo-1505245208761-ba872912fac0?auto=format&fit=crop&q=80&w=2000" class="feature-img">
             
             <h3>2.1. Bản đồ của Sự Tự Chủ: "Vòng tròn Kiểm soát" và "Vô ngã"</h3>
             <p>Hãy tưởng tượng tâm trí bạn là một con tàu giữa đại dương mênh mông. Sóng dữ là biến động kinh tế, gió lốc là những lời phán xét của xã hội, và những con quái vật biển là những bóng ma sợ hãi từ các huyền thoại cũ.</p>
@@ -101,62 +228,103 @@
             <p>• <strong>Với Ngoại cảnh:</strong> Ta dùng sự <u>Chấp nhận</u> của Khắc kỷ để nhìn nhận mọi biến động như những hằng số vật lý, không than vãn nhằm giữ vững quyền định đoạt cảm xúc.<br>
             • <strong>Với Nội tâm:</strong> Ta dùng sự <u>Quan sát</u> của Phật giáo để tách rời khỏi những cơn giận hay lòng tham. Khi cái "Tôi" tan loãng, mọi sự tấn công từ bên ngoài đều trở nên vô định hướng.</p>
 
+            <blockquote data-aos="zoom-in">
+                "Trong số mọi thứ tồn tại, có những thứ nằm trong quyền kiểm soát của ta và những thứ không. [...] Đừng để những thứ ngoài tầm tay điều khiển tâm hồn bạn." <br>
+                <span style="font-size: 1rem; color: var(--accent-color);">— Epictetus, Sổ tay Enchiridion</span>
+            </blockquote>
+
             <h3>2.2. Nội tâm giữa hai cực: "Vốn liếng Tự thân" và "Tình thương Cộng sinh"</h3>
             <p>Người lữ hành của Chủ Nghĩa Nội Tâm Nhất Quán nhìn nhận Tư bản và Xã hội không phải như những phe phái đối lập, mà là hai cánh tay đắc lực của một cơ thể tỉnh thức.</p>
             <p><strong>A. Bồi đắp "Vốn liếng nội tâm" (Tư bản Tự thân):</strong> Chúng ta không bài trừ sự thịnh vượng, nhưng ta tích lũy năng lực không phải để phô trương, mà để xây dựng một Pháo đài tự do. Một người giàu có về bản lĩnh là người không thể bị chiêu dụ bởi những lời hứa hẹn huyễn hoặc. Khi bạn sở hữu năng lực tự chủ, bạn nắm giữ phương tiện sản xuất tối thượng: Tự do tư duy. Bạn làm việc với sự tận độ để khẳng định phẩm giá của một thực thể có trí tuệ.</p>
             <p><strong>B. Mạng lưới "Tình thương Cộng sinh" (Xã hội Nội tại):</strong> Từ sự tự cường cá nhân, ta nhận ra sợi dây liên kết vô hình giữa mọi thực thể. Lòng tốt ở đây không phải là sự bố thí để đổi lấy một tấm vé vào "vương quốc vũ trụ", mà là sự nhận thức rằng: "Mọi tác động vào cộng đồng đều là tác động vào chính mình". Ta làm sạch dòng sông xã hội chính là đang bảo vệ nguồn nước của nội tâm mình. Hành động này diễn ra trong im lặng, thuận theo quy luật Nhân - Quả khách quan.</p>
-
-            <h3>2.3. Khoa học về sự Tỉnh thức: Bản giao hưởng của những "Hằng số"</h3>
+			<h3>2.3. Khoa học về sự Tỉnh thức: Bản giao hưởng của những "Hằng số"</h3>
             <p>Nhiều nhà khoa học đại tài khi đối diện với vũ trụ đã thầm lặng nhận ra một trật tự tự thân không cần đến sự can thiệp của một vị vua nóng giận. Họ nhìn thấy sự kết hợp hoàn mỹ giữa Sự Kiên Định (Khắc kỷ) và Sự Chuyển Hóa (Phật giáo).</p>
             
-            <blockquote>
-                Chủ nghĩa Nội tâm Nhất quán là nơi mà sự năng suất gặp gỡ lòng trắc ẩn dưới ánh sáng của Lý trí. Chúng ta không cần một "ông chủ" tâm linh nào ở trên cao, vì mỗi cá nhân đã là một vũ trụ thu nhỏ, tự vận hành và tự hoàn thiện. Đạo đức tự nguyện từ bên trong bền vững hơn gấp vạn lần đạo đức dựa trên xiềng xích của nỗi sợ.
-            </blockquote>
 
-            <div class="transition-bridge">Có một bản đồ đúng đắn là chưa đủ; ta còn cần sự tĩnh lặng của tâm hồn để giữ vững tay lái khi những cơn bão cảm xúc ập đến.</div>
+
+            <div class="transition-bridge">Có một bản đồ đúng đắn là chưa đủ; ta còn cần sự tĩnh lặng để giữ vững tay lái khi bão cảm xúc ập đến.</div>
         </section>
 
-        <section data-aos="fade-up">
+               <section data-aos="fade-up">
             <h2>CHƯƠNG 3: QUẢN TRỊ BIẾN ĐỘNG – LÀM CHỦ THẾ GIỚI NỘI TÂM</h2>
-            <img src="https://images.unsplash.com/photo-1506477331477-33d6d8b3dc85?q=80&w=2000" class="feature-img">
-            <p style="font-style: italic; color: #666;">Trong chương này, chúng ta không nói về việc "diệt trừ" cảm xúc. Cảm xúc là dòng nhựa sống chảy trong huyết quản của mỗi con người. Tuy nhiên, nếu không có một tay lái vững vàng, dòng nhựa sống ấy sẽ trở thành cơn lũ dữ quét sạch lâu đài lý trí mà bạn đã dày công xây dựng.</p>
+            <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=2000" class="feature-img">
+            
+            <p style="font-style: italic; color: #777; text-align: center; margin-bottom: 40px;">
+                "Hạnh phúc của đời bạn phụ thuộc vào chất lượng những suy nghĩ của bạn." <br>— <strong>Marcus Aurelius</strong>
+            </p>
 
-            <h3>3.1. Phân rã "Cơn cuồng nộ": Khi Lý trí giữ dây cương</h3>
-            <p><strong>A. Khoảng lặng giữa tác động và phản ứng:</strong> Hầu hết con người vận hành như một chiếc lò xo: hễ bị nén là bật lại. Khi ai đó xúc phạm bạn, cái "Tôi" giả tạo trỗi dậy và đòi hỏi sự trả đũa. <u>Bí mật của sự tự chủ nằm ở việc nới rộng khoảng hở giữa kích thích và phản ứng.</u> Thay vì phản ứng tức thì, hãy hít một hơi thật sâu để quan sát luồng khí nóng đang bốc lên trong lồng ngực. Khi bạn bắt đầu Quan sát cơn giận, bạn đã không còn là cơn giận nữa.</p>
-            <p><strong>B. Bẻ gãy điểm tựa của sự giận dữ:</strong> Cơn giận chỉ có thể tồn tại khi nó có một điểm tựa: đó là niềm tin rằng "Tôi bị xúc phạm". Nhưng hãy dùng lý trí để mổ xẻ: "Tôi" là ai? Một lời nói báng bổ của kẻ khác làm sao có thể thay đổi được giá trị thực của bạn?</p>
-
-            <h3>3.2. Cân bằng giữa "Vui sướng và Khổ đau"</h3>
-            <p><strong>A. Thưởng thức nhưng không chiếm hữu:</strong> Khi niềm vui đến, hãy đón nhận nó như một cơn gió mát của mùa xuân. Hãy cười vang, hãy tận hưởng, nhưng đừng để mình bị say đắm đến mức quên mất rằng gió sẽ đi qua. Người nội tâm nhất quán hiểu rằng <u>thịnh vượng chỉ là một trạng thái tạm thời của dòng chảy nguồn lực.</u></p>
-            <p><strong>B. Điềm tĩnh trong giông bão:</strong> Khi nỗi đau ập đến, hãy nhìn nó như một sự chuyển hóa tất yếu. Vũ trụ không có gì mất đi, chỉ có sự thay đổi hình thái. <u>Nỗi đau là lớp vỏ cứng bao bọc lấy hạt nhân trí tuệ.</u> Chấp nhận sự vô thường là đỉnh cao của bản lĩnh Khắc kỷ.</p>
-
-            <h3>3.3. Ánh sáng của sự Thấu hiểu</h3>
-            <p><strong>A. Giúp đỡ từ sự thấu suốt:</strong> Ta giúp người không phải để cầu mong phước báo, cũng không phải để chứng tỏ mình đạo đức. Ta giúp vì ta nhận ra rằng: <u>Sự đau khổ của cộng đồng là sự tổn thương của chính môi trường ta đang sống.</u></p>
-            <p><strong>B. Nhất quán giữa cảm xúc và hành động:</strong> Chúng ta không nói lời hay ý đẹp để che đậy sự trống rỗng bên trong. Chúng ta hành động vì đó là điều đúng đắn phải làm. <em>Sự nhất quán tuyệt đối giữa Cảm xúc - Suy nghĩ - Hành động chính là sức mạnh tối thượng của một thực thể tự do.</em></p>
-
-            <div class="transition-bridge">Và khi nội tâm đã đạt đến sự tĩnh lặng tuyệt đối, đó là lúc ta đủ quyền năng để cất lên lời tuyên ngôn về sự tự do của chính mình.</div>
-        </section>
-
-        <section data-aos="fade-up">
-            <h2>CHƯƠNG 4: TUYÊN NGÔN CỦA CHỦ NGHĨA NỘI TÂM NHẤT QUÁN</h2>
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000" class="feature-img">
-            <p><u>Chủ Nghĩa Nội Tâm Nhất Quán không phải là một tập hợp những lời khuyên đạo đức suông, nó là một bản thiết kế cho sự tự do tuyệt đối.</u></p>
-
-            <h3>4.1. Bẻ gãy xiềng xích của "Đạo đức giả" và "Sự Chiêu dụ"</h3>
-            <p>Mọi hệ thống thần quyền và tổ chức trung gian đều dựa trên một công thức chung: Tạo ra nỗi sợ và bán sự giải thoát. Họ nói bạn "có tội" để họ được quyền "tha thứ". Họ nói bạn "yếu đuối" để họ được quyền "dẫn dắt".</p>
-            <p><strong>Phản biện đanh thép:</strong> Một vị thần nếu thực sự toàn năng và toàn thiện, sẽ không cần sự quỳ lạy của những sinh linh nhỏ bé. Nếu họ cần sự tôn thờ để tồn tại, họ chỉ là những hình tượng quyền lực do con người dựng lên để cai trị lẫn nhau. <u>Lòng tốt không cần thánh đường, nó cần hành động trực tiếp và vô danh.</u></p>
-
-            <h3>4.2. Sự nhất quán: Khi Suy nghĩ và Hành động là Một</h3>
-            <p>Chúng ta không chấp nhận sự tách rời giữa "lời nói hay" và "việc làm tệ". <u>Sự nhất quán là thước đo duy nhất của phẩm giá.</u> Chúng ta tự tạo ra sự hoàn hảo trong từng hành vi nhỏ nhất. Nếu hệ thống tư bản bóc lột, ta dùng lý trí để bảo vệ quyền lợi và sự độc lập của mình. Nếu xã hội vô cảm, ta dùng sự thấu cảm để kết nối mà không cần ai khen thưởng.</p>
-
-            <h3>4.3. Lộ trình của Người Tự Do: Hành động thay lời nói</h3>
-            <p>• <strong>Cắt đứt sự lệ thuộc:</strong> Hãy tự xưng tội với lương tâm và tự tha thứ bằng hành động sửa chữa.<br>
-            • <strong>Xây dựng vốn liếng nội tâm:</strong> Tri thức là vũ khí chống lại sự chiêu dụ.<br>
-            • <strong>Phụng sự trong lặng lẽ:</strong> Sự bình an sau một việc thiện chính là phần thưởng lớn nhất mà không một thiên đàng nào có thể sánh bằng.</p>
-
-            <blockquote>
-                Vũ trụ không có vua, không có ngai vàng, và không có kẻ phán xét. Bạn là mảnh ghép duy nhất có ý thức của vũ trụ đang tự khám phá chính mình. Chúng ta từ bỏ nỗi sợ cái chết, từ bỏ nỗi lo tội lỗi. Chúng ta chọn sống một cuộc đời Nhất Quán: Mạnh mẽ như một nhà Khắc kỷ, bao dung như một người Tỉnh thức, và tự do như những vì sao.
+            <h3>3.1. Phân rã "Cơn cuồng nộ": Khoảng lặng giữa Tác động và Phản ứng</h3>
+            <p>Hầu hết con người vận hành như một chiếc lò xo: hễ bị nén là bật lại. Khi ai đó xúc phạm bạn, cái "Tôi" giả tạo trỗi dậy và đòi hỏi sự trả đũa. Nhưng hãy dừng lại một nhịp. Triết lý Khắc kỷ nhắc nhở ta rằng: <strong>Sự giận dữ là một cơn điên tạm thời.</strong> Nó không giúp ích gì cho mục tiêu của bạn, nó chỉ tàn phá chính ngôi nhà nội tâm mà bạn đang xây dựng.</p>
+            
+            <blockquote data-aos="zoom-in">
+                "Kết quả của cơn giận bao giờ cũng tàn khốc hơn nguyên nhân của nó." <br>
+                <span style="font-size: 1rem; color: var(--accent-color);">— Seneca, Luận về cơn giận (De Ira)</span>
             </blockquote>
+
+            <p>Để quản trị điều này, chúng ta sử dụng kỹ thuật <strong>Quan sát</strong> của Phật giáo. Thay vì nói <em>"Tôi đang giận"</em>, hãy thực tập nói <em>"Có một cơn giận đang trỗi dậy trong tôi"</em>. Khi bạn bắt đầu quan sát luồng khí nóng đang bốc lên trong lồng ngực, bạn đã tách rời mình khỏi cơn giận đó. Bạn không còn là cơn lũ, bạn là bờ đê đang quan sát dòng nước trôi qua.</p>
+
+            <h3>3.2. Cân bằng giữa "Vui sướng" và "Khổ đau"</h3>
+            <p>Trong thế giới nhị nguyên, chúng ta thường đuổi theo niềm vui và trốn chạy nỗi đau. Nhưng sự Nhất quán đòi hỏi một tâm thế khác: <strong>Bình thản (Equanimity).</strong></p>
+            <p>• <strong>Với Niềm vui:</strong> Hãy tận hưởng nó như một làn gió mùa xuân, nhưng đừng cố nhốt nó vào lồng. Seneca từng dạy: <em>"Hãy sở hữu mọi thứ nhưng đừng để chúng sở hữu bạn"</em>. Khi bạn không quá bám víu vào thành công, bạn sẽ không sụp đổ khi nó ra đi.<br>
+            • <strong>Với Nỗi đau:</strong> Hãy nhìn nó như một sự chuyển hóa năng lượng. Trong Phật giáo, nỗi đau là một phần của sự tồn tại, nhưng khổ đau chỉ xuất hiện khi ta phản kháng lại sự thật.</p>
+
+            <blockquote data-aos="zoom-in">
+                "Như một tảng đá kiên cố không bị lung lay bởi gió ngàn, người trí cũng không bị dao động bởi sự khen hay chê." <br>
+                <span style="font-size: 1rem; color: var(--accent-color);">— Kinh Pháp Cú, Kệ số 81</span>
+            </blockquote>
+
+            <h3>3.3. Ánh sáng của sự Thấu hiểu: Biến Cảm xúc thành Hành động Nhất quán</h3>
+            <p>Một người Nội tâm Nhất quán không phải là một "hòn đá vô cảm". Ngược lại, họ thấu cảm sâu sắc hơn bất kỳ ai. Nhưng thay vì để cảm xúc làm mờ lý trí, họ dùng nó làm nhiên liệu cho hành động đúng đắn.</p>
+            <p><strong>Sự nhất quán tối thượng chính là đây:</strong> Khi Cảm xúc cung cấp năng lượng, Lý trí chỉ định hướng đi, và Hành động thực thi kết quả. Ba yếu tố này hòa làm một, tạo nên một thực thể bất khả xâm phạm trước mọi biến động của cuộc đời.</p>
+
+            <div class="transition-bridge">
+                Khi nội tâm đã đạt đến sự tĩnh lặng tuyệt đối sau giông bão, đó chính là lúc ta đủ quyền năng để cất lên bản Tuyên ngôn cuối cùng về tự do.
+            </div>
         </section>
+</section>
+ <h2>CHƯƠNG 4: TUYÊN NGÔN CỦA CHỦ NGHĨA NỘI TÂM NHẤT QUÁN</h2>
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000" class="feature-img">
+    
+    <p>Sau khi phá vỡ màn sương của huyền thoại và thuần phục những cơn bão cảm xúc, chúng ta đứng đây để khẳng định một vị thế mới: <strong>Bạn là mảnh ghép duy nhất có ý thức của vũ trụ đang tự khám phá chính mình.</strong></p>
+
+    <h3>4.1. Sự sụp đổ của những "Ngai vàng hư ảo"</h3>
+    <p>Đạo đức thực sự không nằm ở việc thực thi mệnh lệnh vì sợ hãi hình phạt. Nếu bạn chỉ tốt khi có người quan sát hoặc khi sợ hãi địa ngục, đó không phải là đạo đức – đó là sự phục tùng. Chủ nghĩa Nội tâm Nhất quán khẳng định: Lòng tốt là hệ quả tất yếu của Trí tuệ thấu cảm.</p>
+
+    <blockquote data-aos="flip-left">
+        "Đừng giải thích triết lý của bạn. Hãy thể hiện nó." <br>
+        <span style="font-size: 1rem; color: var(--accent-color);">— Epictetus</span>
+    </blockquote>
+
+    <h3>4.2. Sự nhất quán: Khi Suy nghĩ và Hành động là Một</h3>
+    <p>Chúng ta không chấp nhận sự tách rời giữa "lời nói hay" và "việc làm tệ". Sự nhất quán là thước đo duy nhất của phẩm giá. Chúng ta tự tạo ra sự hoàn hảo trong từng hành vi nhỏ nhất. Nếu hệ thống tư bản bóc lột, ta dùng lý trí để bảo vệ quyền lợi và sự độc lập của mình. Nếu xã hội vô cảm, ta dùng sự thấu cảm để kết nối mà không cần ai khen thưởng.</p>
+
+    <h3>4.3. Lộ trình của Người Tự Do: Hành động thay lời nói</h3>
+    <p>• <strong>Cắt đứt sự lệ thuộc:</strong> Hãy tự xưng tội với lương tâm và tự tha thứ bằng hành động sửa chữa.<br>
+    • <strong>Xây dựng vốn liếng nội tâm:</strong> Tri thức là vũ khí chống lại sự chiêu dụ.<br>
+    • <strong>Phụng sự trong lặng lẽ:</strong> Sự bình an sau một việc thiện chính là phần thưởng lớn nhất mà không một thiên đàng nào có thể sánh bằng.</p>
+    
+    <p>Chúng ta từ bỏ nỗi sợ cái chết, vì chết chỉ là sự chuyển hóa của năng lượng thuận theo hằng số tự nhiên. Chúng ta từ bỏ nỗi lo tội lỗi, vì sai lầm là chất liệu để lý trí lớn mạnh. Chúng ta chọn sống một cuộc đời Nhất Quán: Mạnh mẽ như một nhà Khắc kỷ, bao dung như một người Tỉnh thức, và tự do như những vì sao.</p>
+
+    <div class="conclusion-box" style="text-align: center; border: 2px solid var(--accent-color); padding: 40px; background: rgba(191, 161, 90, 0.05); margin-top: 50px;">
+        <h3 style="margin-top: 0; border: none;">BẠN CẢM THẤY THẾ NÀO VỀ BẢN TUYÊN NGÔN NÀY?</h3>
+        <p>Sự tương tác của bạn là động lực để lan tỏa tư tưởng tự do.</p>
+        
+        <div style="font-size: 2.5rem; color: #ccc; margin-bottom: 20px;" id="star-rating-final">
+            <span style="cursor:pointer;" onclick="rateFinal(1)">★</span>
+            <span style="cursor:pointer;" onclick="rateFinal(2)">★</span>
+            <span style="cursor:pointer;" onclick="rateFinal(3)">★</span>
+            <span style="cursor:pointer;" onclick="rateFinal(4)">★</span>
+            <span style="cursor:pointer;" onclick="rateFinal(5)">★</span>
+        </div>
+        <p id="rating-msg-final" style="font-size: 1rem; color: var(--accent-color); font-weight: 600; min-height: 25px;"></p>
+
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 25px;">
+            <button onclick="window.print()" style="padding: 12px 25px; background: var(--gold-dark); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">Lưu Bản In</button>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="padding: 12px 25px; border: 1px solid var(--gold-dark); color: var(--gold-dark); background: transparent; border-radius: 5px; cursor: pointer; font-weight: 600;">Đọc Lại Từ Đầu</button>
+        </div>
+    </div>
+</section>
+
 
         <footer>
             Viết bởi Trương Khá
@@ -166,13 +334,25 @@
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 1500, once: true });
+    // Hiệu ứng cuộn
+    AOS.init({ duration: 1200, once: true });
+
+    // Nhạc nền
     const audio = document.getElementById('bg-audio');
     const btn = document.getElementById('music-btn');
     btn.addEventListener('click', () => {
         if (audio.paused) { audio.play(); btn.innerHTML = '⏸'; }
         else { audio.pause(); btn.innerHTML = '♫'; }
     });
+
+    // Đánh giá sao
+    function rate(n) {
+        const stars = document.querySelectorAll('.star');
+        const msg = document.getElementById('rating-msg');
+        stars.forEach((s, i) => s.style.color = i < n ? '#bfa15a' : '#ccc');
+        const m = ["Cảm ơn phản hồi của bạn.", "Chúng tôi ghi nhận ý kiến này.", "Hy vọng bài viết giúp ích cho bạn.", "Bạn đã bắt đầu sự thay đổi!", "Tuyệt vời! Hãy sống Nhất Quán."];
+        msg.innerText = m[n-1];
+    }
 </script>
 
 </body>
